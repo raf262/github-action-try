@@ -33,6 +33,7 @@ jobs:
           FILTER_REGEX_EXCLUDE: '.*vendor/.*'
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LOG_LEVEL: WARN
 
       ###############
       #  Get status #
