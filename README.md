@@ -77,6 +77,13 @@ reviewGroups:
 ```
 will automatically be added to your PR.
 
+### Branch name Pull Request
+This job check if your Pull Request title respect the conventions.
+You can change the parameters to mirror your own conventions. 
+It is only trigger on pull request otherwise it would fail. 
+This job use [deepakputhraya/action-pr-title@master](https://github.com/deepakputhraya/action-pr-title).
+
+Regex : ```^(revert: )?(build|chore|docs|feat|fix|perf|refactor|style|test)(\(.*\))?: .{1,50}```
 ## Security
 
 If you discover any security related issues, please use the issue tracker.
