@@ -1,15 +1,13 @@
 name: Super-Linter
 
-on: push
+on:
+  push:
+    branches-ignore: [master, main]
 
 jobs:
   super-linter:
     name: Lint code base
     runs-on: ubuntu-latest
-
-    ##################
-    # Load all steps #
-    ##################
     steps:
 
       ##########################
@@ -34,8 +32,3 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOG_LEVEL: WARN
-
-      ###############
-      #  Get status #
-      ###############
-      - run: echo "🍏 This job's status is ${{ job.status }}."
