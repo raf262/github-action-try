@@ -1,0 +1,24 @@
+name: 'Stale checker'
+on:
+  schedule:
+    - cron: '0 20 * * *' # “At 20:00 on every day.”
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v4
+        with:
+          stale-issue-message: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 5 days.'
+          stale-pr-message: 'This PR is stale because it has been open 45 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          days-before-issue-stale: 30
+          days-before-issue-close: 5
+          days-before-pr-stale: 45
+          days-before-pr-close: 10
+          stale-issue-label: 'no-issue-activity'
+          stale-pr-label: 'no-pr-activity'
+          exempt-pr-labels: 'awaiting-approval,work-in-progress'
+          exempt-draft-pr: true
+          start-date: '2021-10-18T00:00:00Z' # ISO 8601 or RFC 2822
+          enable-statistics: false
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
