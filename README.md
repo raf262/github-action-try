@@ -82,5 +82,4 @@ will automatically be added to your PR.
 If you discover any security related issues, please use the issue tracker.
 
 ## Credits
-
-- [https://github.com/raf262][link-author]
+- [@raf262](https://github.com/raf262)
