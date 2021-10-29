@@ -6,10 +6,35 @@ jobs:
   super-linter:
     name: Lint code base
     runs-on: ubuntu-latest
+
+    ##################
+    # Load all steps #
+    ##################
     steps:
+
+      ##########################
+      # Checkout the code base #
+      ##########################
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
+      ################################
+      # Run Linter against code base #
+      ################################
       - name: Run Super-Linter
-        uses: github/super-linter@v3
+        uses: github/super-linter@v4
+        env:
+          # GITHUB_DOMAIN: 'github.m6web.fr'
+          IGNORE_GITIGNORED_FILES: true
+          IGNORE_GENERATED_FILES: true
+          VALIDATE_ALL_CODEBASE: false
+          FILTER_REGEX_EXCLUDE: '.*vendor/.*'
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      ###############
+      #  Get status #
+      ###############
       - run: echo "🍏 This job's status is ${{ job.status }}."
