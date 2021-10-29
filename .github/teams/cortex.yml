@@ -1,0 +1,15 @@
+addReviewers: true
+addAssignees: author
+numberOfReviewers: 0
+useReviewGroups: true
+
+reviewGroups:
+  cortex:
+    - reviewerA
+    - reviewerB
+    - reviewerC
+
+useAssigneeGroups: false
+filterLabels:
+  exclude:
+    - wip
