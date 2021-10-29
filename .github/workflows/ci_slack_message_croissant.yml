@@ -1,0 +1,22 @@
+name: 'Check if croissants will be eaten tomorrow morning'
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  check-pull-request-number:
+    name: Check PR number
+    runs-on: ubuntu-latest
+    if: (${{ github.event.pull_request.number }}  % 100 == 0)
+    steps:
+      - name: 'Send slack message for 🥐'
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+              {
+                "channel": "#my-super-channel",
+                "text": "${{ github.actor }} brings the 🥐 tomorrow for the ${{ github.event.pull_request.number }} PR on ${{ github.repository }}"
+              }

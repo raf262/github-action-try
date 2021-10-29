@@ -84,6 +84,13 @@ It is only trigger on pull request otherwise it would fail.
 This job use [deepakputhraya/action-pr-title@master](https://github.com/deepakputhraya/action-pr-title).
 
 Regex : ```^(revert: )?(build|chore|docs|feat|fix|perf|refactor|style|test)(\(.*\))?: .{1,50}```
+
+### Send slack messages
+This job runs on every pull request. It checks that the PR's number is a modulo of 100 so the author had to bring 🥐 to
+the team. The message is sent to a slack channel that need to be set in the job file. 
+Either a slack token need to be set in the repository variable in github.
+This job runs on [hbfernandes/slack-action@1.0](https://github.com/abinoda/slack-action).
+
 ## Security
 
 If you discover any security related issues, please use the issue tracker.
