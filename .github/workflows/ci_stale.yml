@@ -15,10 +15,9 @@ jobs:
           days-before-issue-close: 5
           days-before-pr-stale: 45
           days-before-pr-close: 10
-          stale-issue-label: 'no-issue-activity'
-          stale-pr-label: 'no-pr-activity'
-          exempt-pr-labels: 'awaiting-approval,work-in-progress'
-          exempt-draft-pr: true
+          stale-issue-label: 'No Activity'
+          stale-pr-label: 'No Activity'
+          exempt-pr-labels: 'In Progress'
           start-date: '2021-10-18T00:00:00Z' # ISO 8601 or RFC 2822
           enable-statistics: false
           repo-token: ${{ secrets.GITHUB_TOKEN }}
