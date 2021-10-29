@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: deepakputhraya/action-pr-title@master
         with:
-          regex: '(^\w+)\(\)(\:\s)+' # Regex the title should match.
+          regex: '^(revert: )?(build|chore|docs|feat|fix|perf|refactor|style|test)(\(.*\))?: .{1,50}' # Regex the title should match.
           allowed_prefixes: 'feature,fix,feat' # title should start with the given prefix
           # disallowed_prefixes: 'feat/,hotfix' # title should not start with the given prefix
           prefix_case_sensitive: false # title prefix are case insensitive
